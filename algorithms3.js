@@ -1,4 +1,4 @@
-
+/*
 //write bubble sort
 let bubbleSort = (arr) =>{
     let sorted = true;
@@ -15,4 +15,24 @@ let bubbleSort = (arr) =>{
     }while(sorted)
     return arr;
 }
-console.log(bubbleSort([34,6,1,37,8,0]))
+console.log(bubbleSort([34,6,1,37,8,0]));
+*/
+//write selection sort
+let selectionSort = (arr) =>{
+    let pivot = 0;
+    let runner;
+    while(pivot < arr.length){
+        let runner = pivot;
+        for(let i = pivot; i < arr.length; i++){
+            if(arr[i] < arr[pivot]){
+                runner = i;
+            }
+        }
+        let temp = arr[pivot];
+        arr[pivot] = arr[runner];
+        arr[runner] = temp;
+        pivot++
+    }
+    return arr;
+}
+console.log(selectionSort([6,5,4,2,1,0]));
