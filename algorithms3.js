@@ -46,13 +46,12 @@ let insertionSort = (arr) =>{
             arr[n + 1]=  arr[n];
             n--;
         }
-        console.log(arr);
         arr[n+1] = temp;
     }
     return arr;
 }
 console.log(insertionSort([6,5,4,2,1,0]));
-*/
+
 //write merge sort
 let mergeSort = (arr) =>{
     if(arr.length < 2){
@@ -79,5 +78,23 @@ let mergeSort = (arr) =>{
   let myArr = [12,7,42,5];
   
   console.log(mergeSort(myArr));
-
-  
+*/
+//write quicksort
+let quickSort = (arr) =>{
+    if(arr.length < 2){return arr}
+    else{
+        let pivot = arr.shift();
+        let left = [];
+        let right = [];
+        while(arr.length > 0){
+            if(arr[0] <= pivot){
+                left.push(arr.shift());
+            }else
+            if(arr[0] > pivot){
+                right.push(arr.shift());
+            }
+        }
+        return quickSort(left.concat(pivot)).concat(quickSort(right));
+    }
+}
+console.log(quickSort([6,5,4,3,2,1]))
