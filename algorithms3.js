@@ -16,7 +16,7 @@ let bubbleSort = (arr) =>{
     return arr;
 }
 console.log(bubbleSort([34,6,1,37,8,0]));
-*/
+
 //write selection sort
 let selectionSort = (arr) =>{
     let pivot = 0;
@@ -36,3 +36,21 @@ let selectionSort = (arr) =>{
     return arr;
 }
 console.log(selectionSort([6,5,4,2,1,0]));
+*/
+//write insertion sort
+let insertionSort = (arr) =>{
+    for(let i = 0; i < arr.length; i++){
+        let temp = arr[i];
+        let n = i-1;
+        while(n >= 0 && arr[n] > temp){
+            arr[n + 1]=  arr[n];
+            n--;
+        }
+        arr[n+1] = temp;
+    }
+    return arr;
+}
+console.log(insertionSort([6,5,4,2,1,0]));
+
+
+  
