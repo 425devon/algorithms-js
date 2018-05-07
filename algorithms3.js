@@ -36,7 +36,7 @@ let selectionSort = (arr) =>{
     return arr;
 }
 console.log(selectionSort([6,5,4,2,1,0]));
-*/
+
 //write insertion sort
 let insertionSort = (arr) =>{
     for(let i = 0; i < arr.length; i++){
@@ -46,11 +46,38 @@ let insertionSort = (arr) =>{
             arr[n + 1]=  arr[n];
             n--;
         }
+        console.log(arr);
         arr[n+1] = temp;
     }
     return arr;
 }
 console.log(insertionSort([6,5,4,2,1,0]));
-
+*/
+//write merge sort
+let mergeSort = (arr) =>{
+    if(arr.length < 2){
+      return arr;
+    }
+    let middle = Math.floor(arr.length/2);
+    let left = arr.slice(0, middle);
+    let right = arr.slice(middle);
+    return merge(mergeSort(left), mergeSort(right));
+  }
+  
+  let merge = (left, right) =>{
+    let arr =[];
+    while(left.length && right.length){
+      if(left[0] < right[0]){
+        arr.push(left.shift());
+      }else{
+        arr.push(right.shift());
+      }
+    }
+    return arr.concat(left.concat(right));
+  }
+  
+  let myArr = [12,7,42,5];
+  
+  console.log(mergeSort(myArr));
 
   
