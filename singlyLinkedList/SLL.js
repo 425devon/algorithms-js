@@ -44,8 +44,9 @@ module.exports = class SLL{
             let runner = this.head;
             while(runner.next){
                 if(runner.next.val == val){
+                    let temp = runner.next;
                     runner.next = runner.next.next;
-                    return true;
+                    return temp;
                 }
                 runner = runner.next;
             }
