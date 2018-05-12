@@ -43,5 +43,25 @@ module.exports = class BST{
             }
         }
     }
-
+    inOrder(node){
+        if(node){
+            this.inorder(node.left);
+            console.log(node.val);
+            this.inorder(node.right);
+        }
+    }
+    preOrder(node){
+        if(node){
+            console.log(node.val);
+            this.preOrder(node.left);
+            this.preOrder(node.right);
+        }
+    }
+    postOrder(node){
+        if(node){
+            this.postOrder(node.left);
+            this.postOrder(node.right);
+            console.log(node.val);
+        }
+    }
 }
