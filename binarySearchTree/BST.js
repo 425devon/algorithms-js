@@ -88,4 +88,39 @@ module.exports = class BST{
             return node.val;
         }
     }
+    find(val){
+        if(!this.root){
+            console.log("Empty bst, value not found");
+            return null;
+        }
+        else{
+            if(val == this.root.val){
+                console.log(`Found node with value ${val}`);
+                return this.root;
+            }else
+            if(val < this.root.val && this.root.left){
+                return this.search(val, this.root.left);
+            }else
+            if(val > this.root.val && this.root.right){
+                return this.search(val, this.root.right);
+            }else{
+                console.log(`Did not find ${val} value in tree`);
+                return null;
+            }
+        }
+    }
+    search(val, node){
+        if(val == node.val){
+            console.log(`Found ${val} value`);
+            return node;
+        }else
+        if(val < node.val && node.left){
+            return this.search(val, node.left);
+        }else
+        if(val > node.val && node.right){
+            return this.search(val, node.right);
+        }
+        console.log(`${val} value was not found in search`);
+        return null;
+    }
 }
