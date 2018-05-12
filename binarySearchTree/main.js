@@ -13,4 +13,6 @@ bst.insert(10)
 
 //bst.inorder(bst.root);
 //bst.preOrder(bst.root);
-bst.postOrder(bst.root);
+//bst.postOrder(bst.root);
+//bst.getMin(bst.root);
+//bst.getMax(bst.root);

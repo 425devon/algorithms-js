@@ -64,4 +64,28 @@ module.exports = class BST{
             console.log(node.val);
         }
     }
+    getMin(node){
+        if(!this.root){
+            return null;
+        }
+        else{
+            while(node.left){
+                return this.getMin(node.left)
+            }
+            console.log(node.val)
+            return node.val;
+        }
+    }
+    getMax(node){
+        if(!this.root){
+            return null;
+        }
+        else{
+            while(node.right){
+                return this.getMax(node.right);
+            }
+            console.log(node.val);
+            return node.val;
+        }
+    }
 }
