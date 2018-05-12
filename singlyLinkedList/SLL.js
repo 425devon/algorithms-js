@@ -59,7 +59,7 @@ module.exports = class SLL{
         else{
             let runner = this.head;
             while(runner){
-                console.log(JSON.stringify(runner) + "\n");
+                console.log(runner);
                 runner = runner.next;
             }
         }
