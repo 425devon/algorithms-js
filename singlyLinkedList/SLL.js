@@ -5,6 +5,9 @@ module.exports = class SLL{
         this.head = null;
         this.length = 0;
     }
+    peak(){
+        return this.head;
+    }
 
     insert(val){
         let node = new Node(val);
@@ -32,6 +35,13 @@ module.exports = class SLL{
             }
         }
         return false;
+    }
+    shift(){
+        if(!this.head){ return null}
+        let temp = this.head;
+        this.head = this.head.next;
+        this.length--;
+        return temp;
     }
 
     remove(val){
