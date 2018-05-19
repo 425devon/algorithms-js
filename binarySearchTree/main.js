@@ -16,4 +16,6 @@ bst.insert(10)
 //bst.postOrder(bst.root);
 //bst.getMin(bst.root);
 //bst.getMax(bst.root);
-bst.find(6);
+// bst.find(6);
+// bst.remove(6);
+// bst.find(6);

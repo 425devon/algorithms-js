@@ -73,7 +73,7 @@ module.exports = class BST{
                 return this.getMin(node.left)
             }
             console.log(node.val)
-            return node.val;
+            return node;
         }
     }
     getMax(node){
@@ -85,7 +85,7 @@ module.exports = class BST{
                 return this.getMax(node.right);
             }
             console.log(node.val);
-            return node.val;
+            return node;
         }
     }
     find(val){
@@ -97,11 +97,9 @@ module.exports = class BST{
             if(val == this.root.val){
                 console.log(`Found node with value ${val}`);
                 return this.root;
-            }else
-            if(val < this.root.val && this.root.left){
+            }else if(val < this.root.val && this.root.left){
                 return this.search(val, this.root.left);
-            }else
-            if(val > this.root.val && this.root.right){
+            }else if(val > this.root.val && this.root.right){
                 return this.search(val, this.root.right);
             }else{
                 console.log(`Did not find ${val} value in tree`);
@@ -122,5 +120,37 @@ module.exports = class BST{
         }
         console.log(`${val} value was not found in search`);
         return null;
+    }
+
+    findLeftChild(val, node){
+        while(node.left){
+            if(node.left.val == val){
+                return node;
+            }else{
+                return this.findLeftChild(val, node.left);
+            }
+        }
+        console.log(`left child with value ${val} not found`);
+        return;
+    }
+
+    findRightChild(val, node){
+        while(node.right){
+            if(node.right.val == val){
+                return node;
+            }else{
+                return this.findRightChild(val, node.right);
+            }
+        }
+        console.log(`Right child with value ${val} not found`);
+        return;
+    }
+    
+    remove(val){
+        
+    }
+
+    removeNode(val, node){
+        
     }
 }
