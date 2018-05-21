@@ -1,3 +1,6 @@
+/*for brevity all values are being passed in as whole numbers
+i.e $1.54 is expressed as 154 */
+
 const makeChange = require('./changeMaker');
 
 const currency = {
